@@ -2,87 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="712f6fda-9e14-462e-b22c-bf961ff07b90" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_bottom_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_bottom_left_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_bottom_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_bottom_right_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_down_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_left_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_right_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_top_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_top_left_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_top_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_top_right_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_top_right_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/arrow_mini_up_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/backbone-rungym.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bullet_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bullet_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_black_ori.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_blue_ori.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_green_ori.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_red_ori.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/bus_yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/download.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/finish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/pallino_verde.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/start.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/trash-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/img/maps/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/models/App.Models.Activities.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/models/App.Models.Training.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/models/App.Models.User.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/routers/App.Routers.Router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Activity.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Profile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Registration.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Send.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/App.Templates.Training.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Activity.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Dashboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Logout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Profile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Registration.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Send.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/views/App.Views.Training.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/templates/___App.Templates.Logout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/backbone-1.0.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/events.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/css/ext/gumby.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/gumby.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/js-model.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/modernizr-2.6.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/css/run/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/templateLanguages.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/js/lib/underscore-1.4.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="backbone-etrusco-sample.iws" />
@@ -119,7 +38,7 @@
     <file path="/App.Views.Training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1367592598762" ignored="false" />
     <file path="/App.Views.Send.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1367592113241" ignored="false" />
     <file path="/App.Templates.Send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1367592416774" ignored="false" />
-    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1367596405805" ignored="false" />
+    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1367596495448" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,6 +247,11 @@
       <created>1366194543995</created>
       <updated>1366194543995</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1367596515273</created>
+      <updated>1367596515273</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -354,16 +278,16 @@
     <frame x="0" y="0" width="1440" height="860" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32905984" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2159492" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16773733" sideWeight="0.67094016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16773733" sideWeight="0.6880342" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32621083" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31196582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
