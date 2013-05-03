@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="rungym, run, allenamento, corsa, training" />
+    <meta name="description" content="rungym, your personal trainer" />
+    <meta name="author" content="Alessandro De Marchi - ademarchi74@gmail.com" />
+
+    <!-- css ext -->
+    <link rel="stylesheet" href="css/ext/gumby.css" type="text/css" />
+
+    <!-- css run -->
+    <link rel="stylesheet" href="css/run/style.css" type="text/css"  />
+
+    <!-- maps -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCiooBxqdUwWNnhfkHtp7u_B-ehwoyNa6o&sensor=true&libraries=drawing"></script>
+
+    <!-- js library -->
+    <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/underscore-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/lib/backbone-1.0.0.min.js"></script>
+    <script type="text/javascript" src="js/lib/js-model.min.js"></script>
+    <script type="text/javascript" src="js/lib/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="js/lib/gumby.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
+
+    <!-- js app -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- router -->
+    <script type="text/javascript" src="js/routers/App.Routers.Router.js"></script>
+    <!-- model -->
+    <script type="text/javascript" src="js/models/App.Models.User.js"></script>
+    <script type="text/javascript" src="js/models/App.Models.Training.js"></script>
+    <script type="text/javascript" src="js/models/App.Models.Activities.js"></script>
+    <!-- view -->
+    <script type="text/javascript" src="js/views/App.Views.Index.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Login.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Logout.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Registration.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Profile.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Dashboard.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Activity.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Training.js"></script>
+    <script type="text/javascript" src="js/views/App.Views.Send.js"></script>
+
+    <title> rungym - la palestra della corsa </title>
+
+</head>
+
+<body>
+<div id="body">
+    <div id="content">
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        App.init();
+    });
+</script>
+</body>
+
+</html>
