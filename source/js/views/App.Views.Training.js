@@ -69,7 +69,7 @@ App.Views.Training = Backbone.View.extend({
             else
             {
                 App.Global.timer = setInterval(function() {
-                    navigator.geolocation.getCurrentPosition(this.refreshUI, this.noLocation);
+                    navigator.geolocation.getCurrentPosition(App.Views.Training.prototype.refreshUI, App.Views.Training.prototype.noLocation);
                 }, App.Global.speed_timer);
             }
         }
@@ -114,7 +114,7 @@ App.Views.Training = Backbone.View.extend({
 
                 /** calcolo training variables **/
                 App.Global.secondi_totali = App.Global.secondi_totali + App.Global.speed_timer/1000;
-                App.Global.tempo_str = this.get_elapsed_time_string(App.Global.secondi_totali);
+                App.Global.tempo_str = App.Views.Training.prototype.get_elapsed_time_string(App.Global.secondi_totali);
                 App.Global.minuti_totali = Math.floor(App.Global.secondi_totali / 60);
 
                 //CALORIE = ORE * PESO * MET
@@ -130,7 +130,7 @@ App.Views.Training = Backbone.View.extend({
                 App.Global.velocita_istantanea_kmh = Math.round(event.coords.speed * 3.6);      //moltiplico per 3.6 per sapere i Km/h
                 App.Global.velocita_media_kmh = Math.round(App.Global.velocita_media_ms * 3.6);
 
-                App.Global.distance_two_point_km = this.getDistanceFromLatLonInKm(  App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.latitude,
+                App.Global.distance_two_point_km = App.Views.Training.prototype.getDistanceFromLatLonInKm(  App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.latitude,
                     App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.longitude,
                     App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
                     App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.longitude

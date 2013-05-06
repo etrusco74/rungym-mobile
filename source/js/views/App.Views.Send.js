@@ -41,8 +41,8 @@ App.Views.Send = Backbone.View.extend({
             this.$("#btnDelete").html('elimina ('+App.Models.Training.all().length+')');
         }
         else {
-            this.$("#send").remove();
-            this.$("#del").remove();
+            Backbone.history.navigate('#dashboard');
+            window.location.reload();
         }
         return this;
     },

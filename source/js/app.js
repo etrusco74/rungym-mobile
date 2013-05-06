@@ -14,7 +14,7 @@ App = {
 
     /** App config **/
     Const: {
-        debug : true,
+        debug : false,
         //env : 'development',
         env : 'production',
 
