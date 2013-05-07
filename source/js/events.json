@@ -17,6 +17,18 @@
                 "speed": 0,
                 "accuracy": 10,
                 "altitudeAccuracy": 19,
+                "altitude": 39.55534362792969,
+                "longitude": 12.546467769076859,
+                "heading": null,
+                "latitude": 41.967228275700364
+            },
+            "timestamp": 1360052901408
+        },
+        {
+            "coords": {
+                "speed": 0,
+                "accuracy": 10,
+                "altitudeAccuracy": 19,
                 "altitude": 30.30921173095703,
                 "longitude": 12.54653441057267,
                 "heading": null,

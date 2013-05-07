@@ -5,6 +5,7 @@ App = {
     Routers: {},
     Views: {},
 
+    /** init app **/
     init: function () {
         App.Utils.loadTemplate(['Index', 'Login', 'Registration', 'Profile', 'Dashboard', 'Activity', 'Training', 'Send'], function() {
             App.router = new App.Routers.Router();
@@ -41,6 +42,7 @@ App = {
 
         timer : null,
         training_active : false,
+        different_latlon : true,
         index : 0,
         i_emulation : 0,
         speed_timer : 1000,
@@ -65,6 +67,7 @@ App = {
         gr_persi : 0
     },
 
+    /** utils **/
     Utils: {
         loadTemplate: function(views, callback) {
             var deferreds = [];
