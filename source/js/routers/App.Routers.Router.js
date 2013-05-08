@@ -24,16 +24,22 @@ App.Routers.Router = Backbone.Router.extend({
         $('#content').html(this.Index.el);
     },
     login: function() {
-        if (!this.Login) {
-            this.Login = new App.Views.Login();
+        /** reload user data if he has not performed logout **/
+        if (App.Models.User.all().length > 0) {
+            App.Routers.Router.prototype.dashboard();
         }
-        $('#content').html(this.Login.el);
+        else {
+            if (!this.Login) {
+                this.Login = new App.Views.Login();
+            }
+            $('#content').html(this.Login.el);
+        }
     },
     logout: function() {
         if (!this.Logout) {
             this.Logout = new App.Views.Logout();
         }
-        $('#content').html(this.Logout.el);
+        this.index();
     },
     registration: function() {
         if (!this.Registration) {

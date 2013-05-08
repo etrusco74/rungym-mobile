@@ -23,14 +23,8 @@ App.Views.Send = Backbone.View.extend({
 
     /** reload activity and user data if he has not performed logout **/
     load: function() {
-
-        App.Models.User.load(function() {
-            App.Global.user = App.Models.User.first();
-        });
-
-        App.Models.Training.load(function() {
-            App.Global.training = App.Models.Training.last();
-        });
+        App.Global.user = App.Models.User.first();
+        App.Global.training = App.Models.Training.last();
     },
 
     /** render template **/
@@ -41,8 +35,9 @@ App.Views.Send = Backbone.View.extend({
             this.$("#btnDelete").html('elimina ('+App.Models.Training.all().length+')');
         }
         else {
-            Backbone.history.navigate('#dashboard');
-            window.location.reload();
+            App.Routers.Router.prototype.dashboard();
+            //Backbone.history.navigate('#dashboard');
+            //window.location.reload();
         }
         return this;
     },
@@ -65,8 +60,9 @@ App.Views.Send = Backbone.View.extend({
             if (data.success) {
                 App.Global.training.destroy();
                 alert('Allenamento trasferito');
-                Backbone.history.navigate('#dashboard');
-                window.location.reload();
+                App.Routers.Router.prototype.dashboard();
+                //Backbone.history.navigate('#dashboard');
+                //window.location.reload();
             }
             else {
                 alert('error: ' + data.error);
@@ -80,6 +76,7 @@ App.Views.Send = Backbone.View.extend({
 
     delete: function() {
         App.Global.training.destroy();
-        window.location.reload();
+        App.Routers.Router.prototype.send();
+        //window.location.reload();
     }
 });

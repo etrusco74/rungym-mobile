@@ -24,9 +24,7 @@ App.Views.Training = Backbone.View.extend({
     /** load user data and create training **/
     load: function() {
 
-        App.Models.User.load(function() {
-            App.Global.user = App.Models.User.first();
-        });
+        App.Global.user = App.Models.User.first();
 
         App.Global.training = new App.Models.Training({
             "username" :  App.Global.user.attributes.username,
@@ -86,13 +84,15 @@ App.Views.Training = Backbone.View.extend({
 
         if (App.Global.training.attributes.events.length > 1) {
             App.Global.training.save();
-            Backbone.history.navigate('#send');
-            window.location.reload();
+            App.Routers.Router.prototype.send();
+            //Backbone.history.navigate('#send');
+            //window.location.reload();
         }
         else {
             App.Global.training.destroy();
-            Backbone.history.navigate('#dashboard');
-            window.location.reload();
+            App.Routers.Router.prototype.dashboard();
+            //Backbone.history.navigate('#dashboard');
+            //window.location.reload();
         }
     },
 

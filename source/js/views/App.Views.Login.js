@@ -10,24 +10,12 @@ App.Views.Login = Backbone.View.extend({
     /** init view **/
     initialize: function() {
         console.log('Initializing Login View');
-        this.load();
         this.render();
     },
 
     /** submit event for login **/
     events: {
         'submit':   'login'
-    },
-
-    /** reload user data if he has not performed logout **/
-    load: function() {
-        App.Models.User.load(function() {
-            if (App.Models.User.all().length > 0) {
-                Backbone.history.navigate('#dashboard');
-                window.location.reload();
-            }
-        });
-        return this;
     },
 
     /** render template **/
@@ -54,7 +42,6 @@ App.Views.Login = Backbone.View.extend({
                 }
             }
         });
-
         return this;
     },
 
@@ -79,8 +66,9 @@ App.Views.Login = Backbone.View.extend({
             if (data.success) {
                 App.Global.user = new App.Models.User(data.user);
                 App.Global.user.save();
-                Backbone.history.navigate('#dashboard');
-                window.location.reload();
+                App.Routers.Router.prototype.dashboard();
+                //Backbone.history.navigate('#dashboard');
+                //window.location.reload();
             }
             else {
                 alert('error: ' + data.error);

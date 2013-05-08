@@ -90,7 +90,6 @@ App.Views.Registration = Backbone.View.extend({
                 }
             }
         });
-
         return this;
     },
 
@@ -115,8 +114,9 @@ App.Views.Registration = Backbone.View.extend({
                 App.Global.user = new App.Models.User(data.user);
                 App.Global.user.save();
                 alert('Registrazione effettuata correttamente');
-                Backbone.history.navigate('#dashboard');
-                window.location.reload();
+                App.Routers.Router.prototype.dashboard();
+                //Backbone.history.navigate('#dashboard');
+                //window.location.reload();
             }
             else {
                 alert('error: ' + data.error);

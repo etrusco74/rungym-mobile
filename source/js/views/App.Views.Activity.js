@@ -11,20 +11,12 @@ App.Views.Activity = Backbone.View.extend({
     /** init view **/
     initialize: function() {
         console.log('Initializing Activity View');
-        this.load();
         this.render();
     },
 
     /** click event for start training **/
     events: {
         'click #btnGo':   'start_training'
-    },
-
-    /** reload activity data if he has not performed logout **/
-    load: function() {
-        App.Models.Activities.load(function() {
-            App.Global.activities = App.Models.Activities.first();
-        });
     },
 
     /** render template **/
@@ -39,19 +31,20 @@ App.Views.Activity = Backbone.View.extend({
             alert("selezionare l'attività sportiva");
         else    {
             var activity = this.$("#activity :selected").val();
-            Backbone.history.navigate('#training/' + activity);
-            window.location.reload();
+            App.Routers.Router.prototype.training(activity);
+            //Backbone.history.navigate('#training/' + activity);
+            //window.location.reload();
         }
     },
 
     /** render activities model data to select **/
     activity_modelToForm: function() {
-        var data =  App.Global.activities.attributes;
+        var data =  App.Models.Activities.first().attributes;
         for( var i=0 in data ) {
             this.$('#activity')
-                        .append($("<option></option>")
-                        .attr("value",data[i]._id)
-                        .text(data[i].description));
-            }
+                .append($("<option></option>")
+                    .attr("value",data[i]._id)
+                    .text(data[i].description));
+        }
     }
 });

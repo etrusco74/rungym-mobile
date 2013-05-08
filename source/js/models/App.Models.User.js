@@ -8,3 +8,5 @@
 App.Models.User = Model("user", function() {
     this.persistence(Model.localStorage)
 });
+
+App.Models.User.load(function() {});

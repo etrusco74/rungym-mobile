@@ -22,7 +22,7 @@ App.Views.Profile = Backbone.View.extend({
     /** reload user data if he has not performed logout **/
     load: function() {
         App.Models.User.load(function() {
-                App.Global.user = App.Models.User.first();
+            App.Global.user = App.Models.User.first();
         });
     },
 
@@ -85,12 +85,12 @@ App.Views.Profile = Backbone.View.extend({
         if (confirm('confermi di voler aggiornare il tuo profilo?'))    {
             var xhr = $.ajax({
                 type: "PUT",
-                url: App.Const.apiurl() + "user/id/" + App.Global.user.attributes._id,
+                url: App.Const.apiurl() + "user/id/" + App.Models.User.first().attributes._id,
                 data: this.profile_formToModel(),
                 crossDomain: true,
                 headers: {
                     "X-Requested-With": "XMLHttpRequest",
-                    "authkey" : App.Global.user.attributes.auth.authkey
+                    "authkey" : App.Models.User.first().attributes.auth.authkey
                 },
                 dataType: "json",
                 contentType: 'application/json'
@@ -98,10 +98,10 @@ App.Views.Profile = Backbone.View.extend({
 
             xhr.done(function(data, textStatus, jqXHR) {
                 if (data.success) {
-                    App.Global.user.attributes = data.user;
-                    App.Global.user.save();
+                    App.Models.User.first().attributes = data.user;
                     alert('profilo aggiornato con successo');
-                    window.location.reload();
+                    App.Routers.Router.prototype.profile();
+                    //window.location.reload();
                 }
                 else {
                     alert('error: ' + data.error);
@@ -121,7 +121,7 @@ App.Views.Profile = Backbone.View.extend({
         jsonObj.last_name = this.$("#last_name").val();
         jsonObj.username = this.$('#username').val();
         jsonObj.email = this.$('#email').val();
-        if (App.Global.user.attributes.story_weight[App.Global.user.attributes.story_weight.length - 1].weight != this.$('#story_weight').val())
+        if (App.Models.User.first().attributes.story_weight[App.Models.User.first().attributes.story_weight.length - 1].weight != this.$('#story_weight').val())
             jsonObj.story_weight = this.$('#story_weight').val();
         jsonObj.born_date = this.$('#born_date').val();
         jsonObj.gender = this.$("#gender").val();
@@ -131,17 +131,18 @@ App.Views.Profile = Backbone.View.extend({
 
     /** render user model data to profile form **/
     profile_modelToForm: function() {
-        this.$('#_id').val(App.Global.user.attributes._id);
-        this.$('#first_name').val(App.Global.user.attributes.first_name);
-        this.$('#last_name').val(App.Global.user.attributes.last_name);
-        this.$('#username').val(App.Global.user.attributes.username);
-        this.$('#registration_date').val(App.Global.user.attributes.registration_date);
-        this.$('#login_date').val(App.Global.user.attributes.auth.login_date);
-        this.$('#email').val(App.Global.user.attributes.email);
-        this.$('#registration_weight').val(App.Global.user.attributes.registration_weight);
-        this.$('#story_weight').val(App.Global.user.attributes.story_weight[App.Global.user.attributes.story_weight.length - 1].weight);
-        this.$('#story_date').val(App.Global.user.attributes.story_weight[App.Global.user.attributes.story_weight.length - 1].date);
-        this.$('#born_date').val(App.Global.user.attributes.born_date);
-        this.$("#gender").val( App.Global.user.attributes.gender ).attr('selected',true);
+
+        this.$('#_id').val(App.Models.User.first().attributes._id);
+        this.$('#first_name').val(App.Models.User.first().attributes.first_name);
+        this.$('#last_name').val(App.Models.User.first().attributes.last_name);
+        this.$('#username').val(App.Models.User.first().attributes.username);
+        this.$('#registration_date').val(App.Models.User.first().attributes.registration_date);
+        this.$('#login_date').val(App.Models.User.first().attributes.auth.login_date);
+        this.$('#email').val(App.Models.User.first().attributes.email);
+        this.$('#registration_weight').val(App.Models.User.first().attributes.registration_weight);
+        this.$('#story_weight').val(App.Models.User.first().attributes.story_weight[App.Models.User.first().attributes.story_weight.length - 1].weight);
+        this.$('#story_date').val(App.Models.User.first().attributes.story_weight[App.Models.User.first().attributes.story_weight.length - 1].date);
+        this.$('#born_date').val(App.Models.User.first().attributes.born_date);
+        this.$("#gender").val(App.Models.User.first().attributes.gender).attr('selected',true);
     }
 });

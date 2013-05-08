@@ -8,3 +8,5 @@
 App.Models.Training = Model("training", function() {
     this.persistence(Model.localStorage)
 });
+
+App.Models.Training.load(function() {});

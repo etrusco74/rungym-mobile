@@ -11,29 +11,28 @@ App.Views.Logout = Backbone.View.extend({
     initialize: function() {
         console.log('Initializing Logout View');
         this.load();
-        this.render();
+        //this.render();
     },
 
     /** reload user data and destroy it **/
     load: function() {
-        App.Models.User.load(function() {
-            if (App.Models.User.all().length != 0) {
-                App.Global.user = App.Models.User.first();
-                App.Global.user.destroy();
-            }
-        });
+        if (App.Models.User.all().length != 0) {
+            App.Global.user = App.Models.User.first();
+            App.Global.user.destroy();
+        }
 
-        App.Models.Activities.load(function() {
-            if (App.Models.Activities.all().length != 0) {
-                App.Global.activities = App.Models.Activities.first();
-                App.Global.activities.destroy();
-            }
-        });
+        if (App.Models.Activities.all().length != 0) {
+            App.Global.activities = App.Models.Activities.first();
+            App.Global.activities.destroy();
+        }
+
     },
 
     /** back to index **/
     render: function() {
-        Backbone.history.navigate('#');
-        window.location.reload();
+        //App.Routers.Router.prototype.index();
+        //Backbone.history.navigate('#');
+        //window.location.reload();
+        return this;
     }
 });
