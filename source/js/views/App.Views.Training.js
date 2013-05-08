@@ -105,7 +105,7 @@ App.Views.Training = Backbone.View.extend({
 
             if (App.Global.index>0)    {
                 /** verify current and previous lat/lon coordinates **/
-                App.Global.different_latlon = this.is_different_lat_lon(
+                App.Global.different_latlon = App.Views.Training.prototype.is_different_lat_lon(
                         event.coords.latitude,
                         event.coords.longitude,
                         App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
