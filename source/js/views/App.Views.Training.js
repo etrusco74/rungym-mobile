@@ -102,85 +102,96 @@ App.Views.Training = Backbone.View.extend({
         if (!(typeof event === 'undefined'))       {
 
             App.Global.i_emulation ++;
-
-            if (App.Global.index>0)    {
-                /** verify current and previous lat/lon coordinates **/
-                App.Global.different_latlon = App.Views.Training.prototype.is_different_lat_lon(
-                        event.coords.latitude,
-                        event.coords.longitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.longitude);
-            }
-
-            /** work only if current and previous lat/lon are different - fix mongodb spatial error **/
-            if (App.Global.different_latlon) {
-
+            
+            /** first event **/
+            if (App.Global.index==0)    {
+                
                 /** set lat/lon to json obj **/
                 var pos = [];
                 pos.push(event.coords.longitude);
                 pos.push(event.coords.latitude);
                 App.Global.training.attributes.loc.coordinates.push(pos);
                 App.Global.training.attributes.events.push(event);
-
-                if (App.Global.index>0)    {
-
-                    /** calcolo training variables **/
-                    App.Global.secondi_totali = App.Global.secondi_totali + App.Global.speed_timer/1000;
-                    App.Global.tempo_str = App.Views.Training.prototype.get_elapsed_time_string(App.Global.secondi_totali);
-                    App.Global.minuti_totali = Math.floor(App.Global.secondi_totali / 60);
-
-                    //CALORIE = ORE * PESO * MET
-                    /*
-                     calorie =  Math.round ((minuti_totali / 60) * user.attributes.story_weight[user.attributes.story_weight.length - 1].weight * training.attributes.activity_value);
-                     gr_persi = Math.round (calorie/8);
-                     */
-
-                    App.Global.velocita_istantanea_ms = Math.round(event.coords.speed);             //velocità del gps in m/s
-                    App.Global.somma_velocita_istantanea_ms = App.Global.somma_velocita_istantanea_ms + App.Global.velocita_istantanea_ms;
-                    App.Global.velocita_media_ms = Math.round( App.Global.somma_velocita_istantanea_ms / App.Global.index);
-
-                    App.Global.velocita_istantanea_kmh = Math.round(event.coords.speed * 3.6);      //moltiplico per 3.6 per sapere i Km/h
-                    App.Global.velocita_media_kmh = Math.round(App.Global.velocita_media_ms * 3.6);
-
+                
+            }    
+            else {
+            
+                /** verify current and previous lat/lon coordinates **/
+                App.Global.different_latlon = App.Views.Training.prototype.is_different_lat_lon(
+                        event.coords.latitude,
+                        event.coords.longitude,
+                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
+                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.longitude);
+                
+                /** add event only if current and previous lat/lon are different - fix mongodb spatial error **/
+                if (App.Global.different_latlon) {
+    
+                    /** set lat/lon to json obj **/
+                    var pos = [];
+                    pos.push(event.coords.longitude);
+                    pos.push(event.coords.latitude);
+                    App.Global.training.attributes.loc.coordinates.push(pos);
+                    App.Global.training.attributes.events.push(event);
+                    
                     App.Global.distance_two_point_km = App.Views.Training.prototype.getDistanceFromLatLonInKm(  App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.latitude,
                         App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.longitude,
                         App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
                         App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.longitude
                     );      // in Km
-
+    
                     App.Global.total_distance_km = App.Global.total_distance_km + App.Global.distance_two_point_km;
                     App.Global.total_distance_km = Math.round(App.Global.total_distance_km * 1000) / 1000;
                     App.Global.total_distance_m  = App.Global.total_distance_km * 1000;
                     App.Global.total_distance_str = App.Global.total_distance_km.toString().replace('.', ',');
-
-                    //CALORIE = PESO * KM
-                    App.Global.calorie =  Math.round ( App.Global.user.attributes.story_weight[ App.Global.user.attributes.story_weight.length - 1].weight * App.Global.total_distance_km);
-                    App.Global.gr_persi = Math.round((App.Global.calorie / 2 ) / 9);
+                    
                 }
+                
+                /** training variables **/
+                App.Global.secondi_totali = App.Global.secondi_totali + App.Global.speed_timer/1000;
+                App.Global.tempo_str = App.Views.Training.prototype.get_elapsed_time_string(App.Global.secondi_totali);
+                App.Global.minuti_totali = Math.floor(App.Global.secondi_totali / 60);
 
-                /** training values to model **/
-                App.Global.training.attributes.total_event = App.Global.index;
-                App.Global.training.attributes.total_meters = App.Global.total_distance_m;
-                App.Global.training.attributes.speed_average_ms = App.Global.velocita_media_ms;
-                App.Global.training.attributes.speed_average_kmh = App.Global.velocita_media_kmh;
-                App.Global.training.attributes.duration_sec = App.Global.secondi_totali;
-                App.Global.training.attributes.duration_min = App.Global.minuti_totali;
-                App.Global.training.attributes.duration_str = App.Global.tempo_str;
-                App.Global.training.attributes.burned_calories = App.Global.calorie;
-                App.Global.training.attributes.lose_gr = App.Global.gr_persi;
+                /*  
+                //CALORIE = ORE * PESO * MET
+                calorie =  Math.round ((minuti_totali / 60) * user.attributes.story_weight[user.attributes.story_weight.length - 1].weight * training.attributes.activity_value);
+                gr_persi = Math.round (calorie/8);
+                */
 
-                /** refresh training values **/
-                $("#durata").text(App.Global.tempo_str);
-                $("#distanza_percorsa").text(App.Global.total_distance_str);
-                $("#velms").text(App.Global.velocita_istantanea_ms);
-                $("#velkmh").text(App.Global.velocita_istantanea_kmh);
-                $("#velmediams").text(App.Global.velocita_media_ms);
-                $("#velmediakmh").text(App.Global.velocita_media_kmh);
-                $("#cal").text(App.Global.calorie);
-                $("#gr").text(App.Global.gr_persi);
+                App.Global.velocita_istantanea_ms = Math.round(event.coords.speed);                 //velocità del gps in m/s
+                App.Global.somma_velocita_istantanea_ms = App.Global.somma_velocita_istantanea_ms + App.Global.velocita_istantanea_ms;
+                App.Global.velocita_media_ms = Math.round( App.Global.somma_velocita_istantanea_ms / App.Global.index);
 
-                App.Global.index++;
+                App.Global.velocita_istantanea_kmh = Math.round(event.coords.speed * 3.6);      //moltiplico per 3.6 per sapere i Km/h
+                App.Global.velocita_media_kmh = Math.round(App.Global.velocita_media_ms * 3.6);
+
+                //CALORIE = PESO * KM
+                App.Global.calorie =  Math.round ( App.Global.user.attributes.story_weight[ App.Global.user.attributes.story_weight.length - 1].weight * App.Global.total_distance_km);
+                App.Global.gr_persi = Math.round((App.Global.calorie / 2 ) / 9);
+        
             }
+
+            /** training values to model **/
+            App.Global.training.attributes.total_event = App.Global.index;
+            App.Global.training.attributes.total_meters = App.Global.total_distance_m;
+            App.Global.training.attributes.speed_average_ms = App.Global.velocita_media_ms;
+            App.Global.training.attributes.speed_average_kmh = App.Global.velocita_media_kmh;
+            App.Global.training.attributes.duration_sec = App.Global.secondi_totali;
+            App.Global.training.attributes.duration_min = App.Global.minuti_totali;
+            App.Global.training.attributes.duration_str = App.Global.tempo_str;
+            App.Global.training.attributes.burned_calories = App.Global.calorie;
+            App.Global.training.attributes.lose_gr = App.Global.gr_persi;
+
+            /** refresh training values **/
+            $("#durata").text(App.Global.tempo_str);
+            $("#distanza_percorsa").text(App.Global.total_distance_str);
+            $("#velms").text(App.Global.velocita_istantanea_ms);
+            $("#velkmh").text(App.Global.velocita_istantanea_kmh);
+            $("#velmediams").text(App.Global.velocita_media_ms);
+            $("#velmediakmh").text(App.Global.velocita_media_kmh);
+            $("#cal").text(App.Global.calorie);
+            $("#gr").text(App.Global.gr_persi);
+
+            App.Global.index++;
         }
     },
 
