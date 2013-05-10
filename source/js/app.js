@@ -39,7 +39,7 @@ app = {
             var deferreds = [];
             $.each(views, function(index, view) {
                 if (app.views[view]) {
-                    deferreds.push($.get('js/templates/App.Templates.' + view + '.html', function(data) {
+                    deferreds.push($.get('js/templates/app.templates.' + view + '.html', function(data) {
                         app.views[view].prototype.template = _.template(data);
                     }));
                 } else {

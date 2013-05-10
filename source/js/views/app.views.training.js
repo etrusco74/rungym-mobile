@@ -128,7 +128,7 @@ app.views.training = Backbone.View.extend({
                     app.global.trainingModel.attributes.loc.coordinates.push(pos);
                     app.global.trainingModel.attributes.events.push(event);
                     
-                    app.global.distance_two_point_km = app.views.training.prototype.getdistancefromlatloninkm(  app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.latitude,
+                    app.global.distance_two_point_km = app.views.training.prototype.getDistanceFromLatLonInKm(  app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.latitude,
                         app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.longitude,
                         app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.latitude,
                         app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.longitude
