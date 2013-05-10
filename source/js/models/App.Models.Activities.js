@@ -5,16 +5,18 @@
  * Time: 14.07
  * To change this template use File | Settings | File Templates.
  */
-App.Models.Activities = Model("activities", function() {
+app.models.activities = Model("activities", function() {
     this.persistence(Model.localStorage)
 });
 
-App.Models.Activities.load(function() {
-    if (App.Models.Activities.all().length == 0) {
-        $.getJSON(App.Const.apiurl() + "activities",
+/*
+app.models.activities.load(function() {
+    if (app.models.activities.all().length == 0) {
+        $.getJSON(app.const.apiurl() + "activities",
             function (data) {
-                App.Global.activities = new App.Models.Activities(data);
-                App.Global.activities.save();
+                app.global.activities = new app.models.activities(data);
+                app.global.activities.save();
             });
     }
 });
+*/

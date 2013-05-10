@@ -5,8 +5,8 @@
  * Time: 14.07
  * To change this template use File | Settings | File Templates.
  */
-App.Models.Training = Model("training", function() {
+app.models.training = Model("training", function() {
     this.persistence(Model.localStorage)
 });
 
-App.Models.Training.load(function() {});
+app.models.training.load(function() {});

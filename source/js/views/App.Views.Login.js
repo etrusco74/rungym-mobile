@@ -5,23 +5,26 @@
  * Time: 14.55
  * To change this template use File | Settings | File Templates.
  */
-App.Views.Login = Backbone.View.extend({
+app.views.login = Backbone.View.extend({
 
     /** init view **/
     initialize: function() {
-        console.log('Initializing Login View');
-        this.render();
+        console.log('initializing login view');
     },
 
     /** submit event for login **/
     events: {
-        'submit':   'login'
+        'submit':                   'login',
+        'click #btnLoginHome':      'login_home'
+    },
+
+    login_home: function() {
+        app.routers.router.prototype.index();
     },
 
     /** render template **/
     render: function() {
         $(this.el).html(this.template());
-
         /** validate form **/
         this.$("#loginForm").validate({
             rules: {
@@ -52,7 +55,7 @@ App.Views.Login = Backbone.View.extend({
 
         var xhr = $.ajax({
             type: "POST",
-            url: App.Const.apiurl() + "login",
+            url: app.const.apiurl() + "login",
             data: this.login_formToModel(),
             crossDomain: true,
             headers: {
@@ -64,11 +67,9 @@ App.Views.Login = Backbone.View.extend({
 
         xhr.done(function(data, textStatus, jqXHR) {
             if (data.success) {
-                App.Global.user = new App.Models.User(data.user);
-                App.Global.user.save();
-                App.Routers.Router.prototype.dashboard();
-                //Backbone.history.navigate('#dashboard');
-                //window.location.reload();
+                app.global.userModel = new app.models.user(data.user);
+                app.global.userModel.save();
+                app.routers.router.prototype.dashboard();
             }
             else {
                 alert('error: ' + data.error);

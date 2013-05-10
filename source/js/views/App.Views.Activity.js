@@ -6,17 +6,21 @@
  * To change this template use File | Settings | File Templates.
  *
  */
-App.Views.Activity = Backbone.View.extend({
+app.views.activity = Backbone.View.extend({
 
     /** init view **/
     initialize: function() {
-        console.log('Initializing Activity View');
-        this.render();
+        console.log('initializing activity view');
     },
 
     /** click event for start training **/
     events: {
-        'click #btnGo':   'start_training'
+        'click #btnGo':             'start_training',
+        'click #btnDashboard':      'activity_dashboard'
+    },
+
+    activity_dashboard: function() {
+        app.routers.router.prototype.dashboard();
     },
 
     /** render template **/
@@ -31,20 +35,25 @@ App.Views.Activity = Backbone.View.extend({
             alert("selezionare l'attività sportiva");
         else    {
             var activity = this.$("#activity :selected").val();
-            App.Routers.Router.prototype.training(activity);
-            //Backbone.history.navigate('#training/' + activity);
-            //window.location.reload();
+            app.routers.router.prototype.training(activity);
         }
     },
 
     /** render activities model data to select **/
     activity_modelToForm: function() {
-        var data =  App.Models.Activities.first().attributes;
+        var data =  app.models.activities.first().attributes;
         for( var i=0 in data ) {
             this.$('#activity')
                 .append($("<option></option>")
                     .attr("value",data[i]._id)
                     .text(data[i].description));
         }
+    },
+    destroy_view: function() {
+        this.undelegateEvents();
+        $(this.el).removeData().unbind();
+        this.remove();
+        Backbone.View.prototype.remove.call(this);
+        app.global.activityView = null;
     }
 });

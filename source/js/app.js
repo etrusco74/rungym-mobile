@@ -1,20 +1,57 @@
 /** app namespace **/
-App = {
-    Models: {},
-    Collections: {},
-    Routers: {},
-    Views: {},
+app = {
+    models: {},
+    collections: {},
+    routers: {},
+    views: {},
 
-    /** init app **/
-    init: function () {
-        App.Utils.loadTemplate(['Index', 'Login', 'Registration', 'Profile', 'Dashboard', 'Activity', 'Training', 'Send'], function() {
-            App.router = new App.Routers.Router();
-            Backbone.history.start();
-        });
+    /** app utils **/
+    utils: {
+
+        init: function () {
+            app.utils.loadTemplate(['index', 'login', 'registration', 'profile', 'dashboard', 'activity', 'training', 'send'], function() {
+                app.router = new app.routers.router();
+                Backbone.history.start();
+            });
+        },
+
+        loadActivities: function(){
+            app.models.activities.load(function() {
+                if (app.models.activities.all().length == 0) {
+                    $.getJSON(app.const.apiurl() + "activities",
+                        function (data) {
+                            app.global.activitiesModel = new app.models.activities(data);
+                            app.global.activitiesModel.save();
+                        });
+                }
+            });
+        },
+
+        destroyViews: function(){
+            if (app.global.dashboardView) { app.global.dashboardView.destroy_view(); }
+            if (app.global.activityView) { app.global.activityView.destroy_view();  }
+            if (app.global.profileView) { app.global.profileView.destroy_view();  }
+            if (app.global.sendView) { app.global.sendView.destroy_view(); }
+            if (app.global.trainingView) { app.global.trainingView.destroy_view();}
+        },
+
+        loadTemplate: function(views, callback) {
+            var deferreds = [];
+            $.each(views, function(index, view) {
+                if (app.views[view]) {
+                    deferreds.push($.get('js/templates/App.Templates.' + view + '.html', function(data) {
+                        app.views[view].prototype.template = _.template(data);
+                    }));
+                } else {
+                    alert(view + " not found");
+                }
+            });
+            $.when.apply(null, deferreds).done(callback);
+        }
     },
 
-    /** App config **/
-    Const: {
+    /** app config **/
+    const: {
         debug : false,
         //env : 'development',
         env : 'production',
@@ -31,14 +68,11 @@ App = {
 
         testJsonUrl : 'js/events.json',
 
-        version : '0.0.1'
+        version : '0.0.2'
     },
 
-    /** global training variables **/
-    Global: {
-        user : {},
-        training : {},
-        activities : {},
+    /** app global variables **/
+    global: {
 
         timer : null,
         training_active : false,
@@ -65,22 +99,5 @@ App = {
 
         calorie : 0,
         gr_persi : 0
-    },
-
-    /** utils **/
-    Utils: {
-        loadTemplate: function(views, callback) {
-            var deferreds = [];
-            $.each(views, function(index, view) {
-                if (App.Views[view]) {
-                    deferreds.push($.get('js/templates/App.Templates.' + view + '.html', function(data) {
-                        App.Views[view].prototype.template = _.template(data);
-                    }));
-                } else {
-                    alert(view + " not found");
-                }
-            });
-            $.when.apply(null, deferreds).done(callback);
-        }
     }
 };

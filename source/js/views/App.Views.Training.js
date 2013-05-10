@@ -6,28 +6,27 @@
  * To change this template use File | Settings | File Templates.
  *
  */
-App.Views.Training = Backbone.View.extend({
+app.views.training = Backbone.View.extend({
 
     /** init view **/
     initialize: function(options) {
-        console.log('Initializing Training View');
+        console.log('initializing training view');
         this.load();
-        this.render();
     },
 
     /** click event for start training **/
     events: {
-        'click #btnStart':      'start_training',
-        'click #btnEnd':        'end_training'
+        'click #btnStart':      'training_start',
+        'click #btnEnd':        'training_end'
     },
 
     /** load user data and create training **/
     load: function() {
 
-        App.Global.user = App.Models.User.first();
+        app.global.userModel = app.models.user.first();
 
-        App.Global.training = new App.Models.Training({
-            "username" :  App.Global.user.attributes.username,
+        app.global.trainingModel = new app.models.training({
+            "username" :  app.global.userModel.attributes.username,
             "activity_id" : this.options.opt,
             "events": [],
             "loc": {
@@ -45,54 +44,50 @@ App.Views.Training = Backbone.View.extend({
     },
 
     /** start training **/
-    start_training: function() {
-        if (App.Global.training_active) {
-            App.Global.training_active  = false;
+    training_start: function() {
+        if (app.global.training_active) {
+            app.global.training_active  = false;
             $("#btnStart").html('riprendi');
 
-            App.Global.training.attributes.end_date = new Date();
-            clearInterval(App.Global.timer);
+            app.global.trainingModel.attributes.end_date = new Date();
+            clearInterval(app.global.timer);
         }
         else    {
-            App.Global.training_active = true;
+            app.global.training_active = true;
             $("#btnStart").html('ferma');
 
-            if (typeof App.Global.training.attributes.start_date === 'undefined') {
-                App.Global.training.attributes.start_date = new Date();
+            if (typeof app.global.trainingModel.attributes.start_date === 'undefined') {
+                app.global.trainingModel.attributes.start_date = new Date();
             }
 
-            if (App.Const.debug) {
-                $.getJSON(App.Const.testJsonUrl, this.emulation);
+            if (app.const.debug) {
+                $.getJSON(app.const.testJsonUrl, this.emulation);
             }
             else
             {
-                App.Global.timer = setInterval(function() {
-                    navigator.geolocation.getCurrentPosition(App.Views.Training.prototype.refreshUI, App.Views.Training.prototype.noLocation);
-                }, App.Global.speed_timer);
+                app.global.timer = setInterval(function() {
+                    navigator.geolocation.getCurrentPosition(app.views.training.prototype.refreshUI, app.views.training.prototype.noLocation);
+                }, app.global.speed_timer);
             }
         }
     },
 
     /** end training **/
-    end_training: function() {
-        if (App.Global.training_active) {
-            App.Global.training_active  = false;
+    training_end: function() {
+        if (app.global.training_active) {
+            app.global.training_active  = false;
 
-            App.Global.training.attributes.end_date = new Date();
-            clearInterval(App.Global.timer);
+            app.global.trainingModel.attributes.end_date = new Date();
+            clearInterval(app.global.timer);
         }
 
-        if (App.Global.training.attributes.events.length > 1) {
-            App.Global.training.save();
-            App.Routers.Router.prototype.send();
-            //Backbone.history.navigate('#send');
-            //window.location.reload();
+        if (app.global.trainingModel.attributes.events.length > 1) {
+            app.global.trainingModel.save();
+            app.routers.router.prototype.send();
         }
         else {
-            App.Global.training.destroy();
-            App.Routers.Router.prototype.dashboard();
-            //Backbone.history.navigate('#dashboard');
-            //window.location.reload();
+            app.global.trainingModel.destroy();
+            app.routers.router.prototype.dashboard();
         }
     },
 
@@ -101,55 +96,55 @@ App.Views.Training = Backbone.View.extend({
 
         if (!(typeof event === 'undefined'))       {
 
-            App.Global.i_emulation ++;
+            app.global.i_emulation ++;
             
             /** first event **/
-            if (App.Global.index==0)    {
+            if (app.global.index==0)    {
                 
                 /** set lat/lon to json obj **/
                 var pos = [];
                 pos.push(event.coords.longitude);
                 pos.push(event.coords.latitude);
-                App.Global.training.attributes.loc.coordinates.push(pos);
-                App.Global.training.attributes.events.push(event);
+                app.global.trainingModel.attributes.loc.coordinates.push(pos);
+                app.global.trainingModel.attributes.events.push(event);
                 
             }    
             else {
             
                 /** verify current and previous lat/lon coordinates **/
-                App.Global.different_latlon = App.Views.Training.prototype.is_different_lat_lon(
+                app.global.different_latlon = app.views.training.prototype.is_different_lat_lon(
                         event.coords.latitude,
                         event.coords.longitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.longitude);
+                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.latitude,
+                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.longitude);
                 
                 /** add event only if current and previous lat/lon are different - fix mongodb spatial error **/
-                if (App.Global.different_latlon) {
+                if (app.global.different_latlon) {
     
                     /** set lat/lon to json obj **/
                     var pos = [];
                     pos.push(event.coords.longitude);
                     pos.push(event.coords.latitude);
-                    App.Global.training.attributes.loc.coordinates.push(pos);
-                    App.Global.training.attributes.events.push(event);
+                    app.global.trainingModel.attributes.loc.coordinates.push(pos);
+                    app.global.trainingModel.attributes.events.push(event);
                     
-                    App.Global.distance_two_point_km = App.Views.Training.prototype.getDistanceFromLatLonInKm(  App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.latitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 2].coords.longitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.latitude,
-                        App.Global.training.attributes.events[App.Global.training.attributes.events.length - 1].coords.longitude
-                    );      // in Km
+                    app.global.distance_two_point_km = app.views.training.prototype.getdistancefromlatloninkm(  app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.latitude,
+                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.longitude,
+                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.latitude,
+                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.longitude
+                    );      // in km
     
-                    App.Global.total_distance_km = App.Global.total_distance_km + App.Global.distance_two_point_km;
-                    App.Global.total_distance_km = Math.round(App.Global.total_distance_km * 1000) / 1000;
-                    App.Global.total_distance_m  = App.Global.total_distance_km * 1000;
-                    App.Global.total_distance_str = App.Global.total_distance_km.toString().replace('.', ',');
+                    app.global.total_distance_km = app.global.total_distance_km + app.global.distance_two_point_km;
+                    app.global.total_distance_km = Math.round(app.global.total_distance_km * 1000) / 1000;
+                    app.global.total_distance_m  = app.global.total_distance_km * 1000;
+                    app.global.total_distance_str = app.global.total_distance_km.toString().replace('.', ',');
                     
                 }
                 
                 /** training variables **/
-                App.Global.secondi_totali = App.Global.secondi_totali + App.Global.speed_timer/1000;
-                App.Global.tempo_str = App.Views.Training.prototype.get_elapsed_time_string(App.Global.secondi_totali);
-                App.Global.minuti_totali = Math.floor(App.Global.secondi_totali / 60);
+                app.global.secondi_totali = app.global.secondi_totali + app.global.speed_timer/1000;
+                app.global.tempo_str = app.views.training.prototype.get_elapsed_time_string(app.global.secondi_totali);
+                app.global.minuti_totali = Math.floor(app.global.secondi_totali / 60);
 
                 /*  
                 //CALORIE = ORE * PESO * MET
@@ -157,41 +152,41 @@ App.Views.Training = Backbone.View.extend({
                 gr_persi = Math.round (calorie/8);
                 */
 
-                App.Global.velocita_istantanea_ms = Math.round(event.coords.speed);                 //velocità del gps in m/s
-                App.Global.somma_velocita_istantanea_ms = App.Global.somma_velocita_istantanea_ms + App.Global.velocita_istantanea_ms;
-                App.Global.velocita_media_ms = Math.round( App.Global.somma_velocita_istantanea_ms / App.Global.index);
+                app.global.velocita_istantanea_ms = Math.round(event.coords.speed);                 //velocità del gps in m/s
+                app.global.somma_velocita_istantanea_ms = app.global.somma_velocita_istantanea_ms + app.global.velocita_istantanea_ms;
+                app.global.velocita_media_ms = Math.round( app.global.somma_velocita_istantanea_ms / app.global.index );
 
-                App.Global.velocita_istantanea_kmh = Math.round(event.coords.speed * 3.6);      //moltiplico per 3.6 per sapere i Km/h
-                App.Global.velocita_media_kmh = Math.round(App.Global.velocita_media_ms * 3.6);
+                app.global.velocita_istantanea_kmh = Math.round(event.coords.speed * 3.6);      //moltiplico per 3.6 per sapere i Km/h
+                app.global.velocita_media_kmh = Math.round(app.global.velocita_media_ms * 3.6);
 
                 //CALORIE = PESO * KM
-                App.Global.calorie =  Math.round ( App.Global.user.attributes.story_weight[ App.Global.user.attributes.story_weight.length - 1].weight * App.Global.total_distance_km);
-                App.Global.gr_persi = Math.round((App.Global.calorie / 2 ) / 9);
+                app.global.calorie =  Math.round ( app.global.userModel.attributes.story_weight[ app.global.userModel.attributes.story_weight.length - 1].weight * app.global.total_distance_km);
+                app.global.gr_persi = Math.round(( app.global.calorie / 2 ) / 9);
         
             }
 
             /** training values to model **/
-            App.Global.training.attributes.total_event = App.Global.index;
-            App.Global.training.attributes.total_meters = App.Global.total_distance_m;
-            App.Global.training.attributes.speed_average_ms = App.Global.velocita_media_ms;
-            App.Global.training.attributes.speed_average_kmh = App.Global.velocita_media_kmh;
-            App.Global.training.attributes.duration_sec = App.Global.secondi_totali;
-            App.Global.training.attributes.duration_min = App.Global.minuti_totali;
-            App.Global.training.attributes.duration_str = App.Global.tempo_str;
-            App.Global.training.attributes.burned_calories = App.Global.calorie;
-            App.Global.training.attributes.lose_gr = App.Global.gr_persi;
+            app.global.trainingModel.attributes.total_event = app.global.index;
+            app.global.trainingModel.attributes.total_meters = app.global.total_distance_m;
+            app.global.trainingModel.attributes.speed_average_ms = app.global.velocita_media_ms;
+            app.global.trainingModel.attributes.speed_average_kmh = app.global.velocita_media_kmh;
+            app.global.trainingModel.attributes.duration_sec = app.global.secondi_totali;
+            app.global.trainingModel.attributes.duration_min = app.global.minuti_totali;
+            app.global.trainingModel.attributes.duration_str = app.global.tempo_str;
+            app.global.trainingModel.attributes.burned_calories = app.global.calorie;
+            app.global.trainingModel.attributes.lose_gr = app.global.gr_persi;
 
             /** refresh training values **/
-            $("#durata").text(App.Global.tempo_str);
-            $("#distanza_percorsa").text(App.Global.total_distance_str);
-            $("#velms").text(App.Global.velocita_istantanea_ms);
-            $("#velkmh").text(App.Global.velocita_istantanea_kmh);
-            $("#velmediams").text(App.Global.velocita_media_ms);
-            $("#velmediakmh").text(App.Global.velocita_media_kmh);
-            $("#cal").text(App.Global.calorie);
-            $("#gr").text(App.Global.gr_persi);
+            $("#durata").text(app.global.tempo_str);
+            $("#distanza_percorsa").text(app.global.total_distance_str);
+            $("#velms").text(app.global.velocita_istantanea_ms);
+            $("#velkmh").text(app.global.velocita_istantanea_kmh);
+            $("#velmediams").text(app.global.velocita_media_ms);
+            $("#velmediakmh").text(app.global.velocita_media_kmh);
+            $("#cal").text(app.global.calorie);
+            $("#gr").text(app.global.gr_persi);
 
-            App.Global.index++;
+            app.global.index++;
         }
     },
 
@@ -216,9 +211,9 @@ App.Views.Training = Backbone.View.extend({
     /** emulate training **/
     emulation: function(event) {
 
-        App.Global.timer = setInterval(function() {
-            (App.Global.i_emulation < event.event.length) ? App.Views.Training.prototype.refreshUI(event.event[App.Global.i_emulation]) : clearInterval(App.Global.timer);
-        }, App.Global.speed_timer);
+        app.global.timer = setInterval(function() {
+            (app.global.i_emulation < event.event.length) ? app.views.training.prototype.refreshUI(event.event[app.global.i_emulation]) : clearInterval(app.global.timer);
+        }, app.global.speed_timer);
 
     },
 
@@ -269,6 +264,14 @@ App.Views.Training = Backbone.View.extend({
     /** return true if current and prev coords are different **/
     is_different_lat_lon: function(cur_lat, cur_lon, prev_lat, prev_lon) {
         return ((cur_lat != prev_lat) && (cur_lon != prev_lon));
+    },
+
+    destroy_view: function() {
+        this.undelegateEvents();
+        $(this.el).removeData().unbind();
+        this.remove();
+        Backbone.View.prototype.remove.call(this);
+        app.global.trainingView = null;
     }
 });
 

@@ -5,17 +5,21 @@
  * Time: 14.55
  * To change this template use File | Settings | File Templates.
  */
-App.Views.Registration = Backbone.View.extend({
+app.views.registration = Backbone.View.extend({
 
     /** init view **/
     initialize: function() {
-        console.log('Initializing Registration View');
-        this.render();
+        console.log('initializing registration view');
     },
 
     /** submit event for registration **/
     events: {
-        'submit':   'registration'
+        'submit':                           'registration',
+        'click #btnRegistrationHome':       'registration_home'
+    },
+
+    registration_home: function() {
+        app.routers.router.prototype.index();
     },
 
     /** render template **/
@@ -99,7 +103,7 @@ App.Views.Registration = Backbone.View.extend({
 
         var xhr = $.ajax({
             type: "POST",
-            url: App.Const.apiurl() + "user",
+            url: app.const.apiurl() + "user",
             data: this.registration_formToModel(),
             crossDomain: true,
             headers: {
@@ -111,12 +115,10 @@ App.Views.Registration = Backbone.View.extend({
 
         xhr.done(function(data, textStatus, jqXHR) {
             if (data.success) {
-                App.Global.user = new App.Models.User(data.user);
-                App.Global.user.save();
-                alert('Registrazione effettuata correttamente');
-                App.Routers.Router.prototype.dashboard();
-                //Backbone.history.navigate('#dashboard');
-                //window.location.reload();
+                app.global.userModel = new app.models.user(data.user);
+                app.global.userModel.save();
+                alert('registrazione effettuata correttamente');
+                app.routers.router.prototype.dashboard();
             }
             else {
                 alert('error: ' + data.error);
