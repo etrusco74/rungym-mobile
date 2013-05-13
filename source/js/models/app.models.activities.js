@@ -9,14 +9,4 @@ app.models.activities = Model("activities", function() {
     this.persistence(Model.localStorage)
 });
 
-/*
-app.models.activities.load(function() {
-    if (app.models.activities.all().length == 0) {
-        $.getJSON(app.const.apiurl() + "activities",
-            function (data) {
-                app.global.activities = new app.models.activities(data);
-                app.global.activities.save();
-            });
-    }
-});
-*/
+app.models.activities.load(function() {});
