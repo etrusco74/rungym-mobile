@@ -38,7 +38,7 @@
     <file path="/App.Views.Training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368106487245" ignored="false" />
     <file path="/App.Views.Send.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368021312324" ignored="false" />
     <file path="/App.Templates.Send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368105918911" ignored="false" />
-    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368633472383" ignored="false" />
+    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368633495415" ignored="false" />
     <file path="/app.models.activities.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368192159924" ignored="false" />
     <file path="/app.models.training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181925121" ignored="false" />
     <file path="/app.models.user.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181945920" ignored="false" />
@@ -371,7 +371,11 @@
       <created>1368633486426</created>
       <updated>1368633486426</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="twitter bootstrap mod">
+      <created>1368633498536</created>
+      <updated>1368633498536</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
