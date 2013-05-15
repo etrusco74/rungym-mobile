@@ -132,6 +132,14 @@ app.routers.router = Backbone.Router.extend({
         app.global.trainingView = new app.views.training({opt : activity});
         app.global.trainingView.render();
         $('#content').html(app.global.trainingView.el);
+
+        var activityObj = app.models.activities.first().attributes;
+        Object.keys(activityObj).forEach(function(key) {
+            if (activityObj[key]._id ==  activity) {
+                $('#activity_description').text(activityObj[key].description);
+            }
+        });
+
         this.navigate('#training/'+activity, { trigger : false });
     },
     send: function() {

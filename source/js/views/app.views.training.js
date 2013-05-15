@@ -23,11 +23,12 @@ app.views.training = Backbone.View.extend({
     /** load user data and create training **/
     load: function() {
 
+        var activity_id = this.options.opt;
         app.global.userModel = app.models.user.first();
 
         app.global.trainingModel = new app.models.training({
             "username" :  app.global.userModel.attributes.username,
-            "activity_id" : this.options.opt,
+            "activity_id" : activity_id,
             "events": [],
             "loc": {
                 "type" : "LineString",

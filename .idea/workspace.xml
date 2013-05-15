@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="712f6fda-9e14-462e-b22c-bf961ff07b90" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/app.js" afterPath="$PROJECT_DIR$/source/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/routers/app.routers.router.js" afterPath="$PROJECT_DIR$/source/js/routers/app.routers.router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.activity.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.activity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.index.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.login.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.profile.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.registration.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.registration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.send.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.send.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.training.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.training.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/views/app.views.activity.js" afterPath="$PROJECT_DIR$/source/js/views/app.views.activity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/views/app.views.login.js" afterPath="$PROJECT_DIR$/source/js/views/app.views.login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/views/app.views.training.js" afterPath="$PROJECT_DIR$/source/js/views/app.views.training.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/index.html" afterPath="$PROJECT_DIR$/source/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/css/run/style.css" afterPath="$PROJECT_DIR$/source/css/run/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="backbone-etrusco-sample.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1366194869055" ignored="false" />
-    <file path="/index.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368191324434" ignored="false" />
+    <file path="/index.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368545749959" ignored="false" />
     <file path="/example.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1366200406716" ignored="false" />
     <file path="/router.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1366201062354" ignored="false" />
     <file path="/foo.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1366201218403" ignored="false" />
@@ -38,24 +53,26 @@
     <file path="/App.Views.Training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368106487245" ignored="false" />
     <file path="/App.Views.Send.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368021312324" ignored="false" />
     <file path="/App.Templates.Send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368105918911" ignored="false" />
-    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368199528098" ignored="false" />
+    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368543404450" ignored="false" />
     <file path="/app.models.activities.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368192159924" ignored="false" />
     <file path="/app.models.training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181925121" ignored="false" />
     <file path="/app.models.user.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181945920" ignored="false" />
     <file path="/app.routers.router.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368197851152" ignored="false" />
-    <file path="/app.templates.index.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368188130011" ignored="false" />
-    <file path="/app.templates.login.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368188112788" ignored="false" />
-    <file path="/app.templates.registration.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368188204246" ignored="false" />
-    <file path="/app.templates.dashboard.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368189755848" ignored="false" />
-    <file path="/app.templates.activity.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368189792221" ignored="false" />
-    <file path="/app.templates.profile.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368189876196" ignored="false" />
-    <file path="/app.templates.send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368189933382" ignored="false" />
+    <file path="/app.templates.index.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368624025241" ignored="false" />
+    <file path="/app.templates.login.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368625714224" ignored="false" />
+    <file path="/app.templates.registration.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368608717849" ignored="false" />
+    <file path="/app.templates.dashboard.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368546308546" ignored="false" />
+    <file path="/app.templates.activity.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368613789443" ignored="false" />
+    <file path="/app.templates.profile.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368613150102" ignored="false" />
+    <file path="/app.templates.send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368621843207" ignored="false" />
     <file path="/app.views.activity.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368197404034" ignored="false" />
     <file path="/app.views.registration.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368192447375" ignored="false" />
     <file path="/app.views.dashboard.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368197255070" ignored="false" />
     <file path="/app.views.profile.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368197497658" ignored="false" />
     <file path="/app.views.send.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368197510332" ignored="false" />
-    <file path="/app.views.training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368197527652" ignored="false" />
+    <file path="/app.views.training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368620135586" ignored="false" />
+    <file path="/app.templates.training.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368622380328" ignored="false" />
+    <file path="/app.views.login.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368626533154" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +91,89 @@
     <favorites_list name="backbone-etrusco-sample" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="app.templates.activity.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.activity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="26" selection-start="548" selection-end="548" vertical-scroll-proportion="-12.423077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.dashboard.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="23" selection-start="42" selection-end="42" vertical-scroll-proportion="-0.65384614">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="23" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.65384614">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.login.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="96" selection-start="852" selection-end="852" vertical-scroll-proportion="0.816">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.views.login.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/views/app.views.login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="8" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.profile.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="23" selection-start="40" selection-end="40" vertical-scroll-proportion="-0.65384614">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.registration.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.registration.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="63" selection-start="1858" selection-end="1868" vertical-scroll-proportion="-11.115385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.send.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.send.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="23" selection-start="37" selection-end="37" vertical-scroll-proportion="-0.65384614">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.templates.training.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.training.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="10" selection-start="1230" selection-end="1230" vertical-scroll-proportion="-13.730769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -93,22 +192,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/source/css/ext/bootstrap.css" />
+        <option value="$PROJECT_DIR$/source/js/views/app.views.activity.js" />
+        <option value="$PROJECT_DIR$/source/js/views/app.views.training.js" />
+        <option value="$PROJECT_DIR$/source/js/routers/app.routers.router.js" />
+        <option value="$PROJECT_DIR$/source/js/app.js" />
+        <option value="$PROJECT_DIR$/source/css/run/style.css" />
+        <option value="$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html" />
+        <option value="$PROJECT_DIR$/source/js/templates/app.templates.index.html" />
         <option value="$PROJECT_DIR$/source/js/templates/app.templates.profile.html" />
         <option value="$PROJECT_DIR$/source/js/templates/app.templates.registration.html" />
         <option value="$PROJECT_DIR$/source/js/templates/app.templates.send.html" />
+        <option value="$PROJECT_DIR$/source/js/templates/app.templates.training.html" />
+        <option value="$PROJECT_DIR$/source/js/templates/app.templates.activity.html" />
         <option value="$PROJECT_DIR$/source/index.html" />
         <option value="$PROJECT_DIR$/source/js/views/app.views.login.js" />
-        <option value="$PROJECT_DIR$/source/js/views/app.views.registration.js" />
-        <option value="$PROJECT_DIR$/source/js/models/app.models.activities.js" />
-        <option value="$PROJECT_DIR$/source/js/models/app.models.user.js" />
-        <option value="$PROJECT_DIR$/source/js/models/app.models.training.js" />
-        <option value="$PROJECT_DIR$/source/js/views/app.views.dashboard.js" />
-        <option value="$PROJECT_DIR$/source/js/views/app.views.activity.js" />
-        <option value="$PROJECT_DIR$/source/js/views/app.views.profile.js" />
-        <option value="$PROJECT_DIR$/source/js/views/app.views.send.js" />
-        <option value="$PROJECT_DIR$/source/js/views/app.views.training.js" />
-        <option value="$PROJECT_DIR$/source/js/app.js" />
-        <option value="$PROJECT_DIR$/source/js/routers/app.routers.router.js" />
+        <option value="$PROJECT_DIR$/source/js/templates/app.templates.login.html" />
       </list>
     </option>
   </component>
@@ -180,140 +279,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backbone-etrusco-sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rungymobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -329,11 +294,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Zend\Apache2\htdocs\js\rungymobile\source\js\templates" />
+      <recent name="C:\Zend\Apache2\htdocs\js\rungymobile\source" />
       <recent name="C:\Zend\Apache2\htdocs\js\backbone-rungym\source\js\views" />
       <recent name="C:\Zend\Apache2\htdocs\js\backbone-rungym\source\js\models" />
       <recent name="C:\Zend\Apache2\htdocs\js\backbone-rungym\source\js\lib" />
-      <recent name="C:\Zend\Apache2\htdocs\js\backbone-rungym\source\js\templates" />
-      <recent name="F:\Zend\Apache2\htdocs\js\backbone-rungym\source\js\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Zend\Apache2\htdocs\js\backbone-etrusco-sample\source\js\routers" />
@@ -409,7 +374,15 @@
       <created>1368199534533</created>
       <updated>1368199534533</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="general rewrite">
+      <created>1368199572251</created>
+      <updated>1368199572251</updated>
+    </task>
+    <task id="LOCAL-00009" summary="general rewrite">
+      <created>1368435469774</created>
+      <updated>1368435469774</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -436,11 +409,10 @@
     <frame x="0" y="0" width="1440" height="860" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5470086" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36182335" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2159492" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23982869" sideWeight="0.45299146" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23982869" sideWeight="0.6381766" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32621083" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -450,6 +422,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3955432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -524,123 +497,114 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.training.html">
+    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.activity.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.884615">
+        <state line="51" column="4" selection-start="1425" selection-end="1425" vertical-scroll-proportion="1.042751">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.registration.js">
+    <entry file="file://$PROJECT_DIR$/source/js/routers/app.routers.router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="36" selection-start="3735" selection-end="3735" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#774#3057#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/models/app.models.user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="36" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/models/app.models.training.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.activity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/models/app.models.activities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="583" selection-end="586" vertical-scroll-proportion="0.63432837">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="30" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="36" selection-start="1885" selection-end="1885" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#708#1226#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="22" selection-start="5607" selection-end="5607" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.send.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="23" selection-start="2577" selection-end="2577" vertical-scroll-proportion="0.0">
+        <state line="137" column="49" selection-start="5649" selection-end="5649" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/js/views/app.views.training.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="273" column="31" selection-start="11630" selection-end="11630" vertical-scroll-proportion="0.0">
+        <state line="84" column="27" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.activity.js">
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.send.gumby.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="31" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.9048507">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="15" selection-start="416" selection-end="416" vertical-scroll-proportion="0.44402984">
-          <folding>
-            <element signature="e#1976#2546#0" expanded="false" />
-            <element signature="e#2594#3204#0" expanded="false" />
-          </folding>
+        <state line="70" column="24" selection-start="2539" selection-end="2539" vertical-scroll-proportion="2.1794872">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/js/routers/app.routers.router.js">
+    <entry file="file://$PROJECT_DIR$/source/css/run/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="41" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.60261196">
+        <state line="6" column="14" selection-start="80" selection-end="80" vertical-scroll-proportion="0.18959108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="42" selection-end="42" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="40" selection-end="40" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.send.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="37" selection-end="37" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="63" selection-start="1858" selection-end="1868" vertical-scroll-proportion="-11.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.training.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="10" selection-start="1230" selection-end="1230" vertical-scroll-proportion="-13.730769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="26" selection-start="548" selection-end="548" vertical-scroll-proportion="-12.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="61" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-16.346153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/views/app.views.login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="8" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/js/templates/app.templates.login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="96" selection-start="852" selection-end="852" vertical-scroll-proportion="0.816">
           <folding />
         </state>
       </provider>

@@ -49,6 +49,7 @@ app.views.activity = Backbone.View.extend({
                     .text(data[i].description));
         }
     },
+
     destroy_view: function() {
         this.undelegateEvents();
         $(this.el).removeData().unbind();

@@ -4,11 +4,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-}
-
-#map_canvas {
-    width: 250px;
-    height: 200px;
+    padding: 10px;
 }
 
 #res {font-size: 12pt;color: #cc3300}

@@ -68,7 +68,7 @@ app = {
 
         testJsonUrl : 'js/events.json',
 
-        version : '0.0.2'
+        version : '0.0.3'
     },
 
     /** app global variables **/

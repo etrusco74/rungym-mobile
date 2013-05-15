@@ -14,8 +14,7 @@ app.views.login = Backbone.View.extend({
 
     /** submit event for login **/
     events: {
-        'submit':                   'login',
-        'click #btnLoginHome':      'login_home'
+        'submit':                   'login'
     },
 
     login_home: function() {

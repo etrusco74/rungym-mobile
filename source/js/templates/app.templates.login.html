@@ -1,30 +1,23 @@
 <!-- Login -->
 <div class="container">
 
-    <div class="row">
-        <div class="twelve columns special head">
+    <div class="row-fluid">
+        <div class="span12">
             <h1>RunGym</h1>
             <h3 class="lead">Login</h3>
         </div>
     </div>
-
-    <form class="loginForm" id="loginForm" method="post">
-
-        <div class="row">
-            <ul class="twelve columns">
-                <li class="field"><input class="text input"     type="text"     name="username" id="username" value="rungym" placeholder="Username" /></li>
-                <li class="field"><input class="password input" type="password" name="password" id="password" value="prova" placeholder="Password" /></li>
-            </ul>
-        </div>
-
-        <div class="row">
-            <div class="twelve columns">
-        		<div class="large primary btn"><button type="submit" id="loginButton">vai</button></div>
-        		<!--<div class="large secondary btn"><button id="btnLoginHome" style="width: 100%">indietro</button></div>//-->
-                <div class="large secondary btn"><a href='#'>indietro</a></div>
-        	</div>
-        </div>
-
-    </form>
-
+    <div class="row-fluid">
+            <div class="span12">
+                <form class="loginForm" id="loginForm" method="post">
+                    <fieldset>
+                        <input type="text"     name="username" id="username" placeholder="Username" value="rungym" /><br>
+                        <input type="password" name="password" id="password" placeholder="Password" value="prova" /><br>
+                        <button type="submit" id="loginButton" class="btn btn-success btn-large">login</button>
+                        &nbsp;
+                        <a href='#' class="btn btn-danger btn-large">indietro</a>
+                    </fieldset>
+                </form>
+            </div>
+    </div>
 </div>
