@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="712f6fda-9e14-462e-b22c-bf961ff07b90" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/app.js" afterPath="$PROJECT_DIR$/source/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/routers/app.routers.router.js" afterPath="$PROJECT_DIR$/source/js/routers/app.routers.router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.activity.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.activity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.index.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.login.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.profile.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.registration.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.registration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.send.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.send.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/templates/app.templates.training.html" afterPath="$PROJECT_DIR$/source/js/templates/app.templates.training.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/views/app.views.activity.js" afterPath="$PROJECT_DIR$/source/js/views/app.views.activity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/views/app.views.login.js" afterPath="$PROJECT_DIR$/source/js/views/app.views.login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/js/views/app.views.training.js" afterPath="$PROJECT_DIR$/source/js/views/app.views.training.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/index.html" afterPath="$PROJECT_DIR$/source/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/css/run/style.css" afterPath="$PROJECT_DIR$/source/css/run/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="backbone-etrusco-sample.iws" />
@@ -53,7 +38,7 @@
     <file path="/App.Views.Training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368106487245" ignored="false" />
     <file path="/App.Views.Send.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368021312324" ignored="false" />
     <file path="/App.Templates.Send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368105918911" ignored="false" />
-    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368543404450" ignored="false" />
+    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368633472383" ignored="false" />
     <file path="/app.models.activities.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368192159924" ignored="false" />
     <file path="/app.models.training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181925121" ignored="false" />
     <file path="/app.models.user.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181945920" ignored="false" />
@@ -382,7 +367,11 @@
       <created>1368435469774</created>
       <updated>1368435469774</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="twitter bootstrap mod">
+      <created>1368633486426</created>
+      <updated>1368633486426</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -409,10 +398,11 @@
     <frame x="0" y="0" width="1440" height="860" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36182335" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36182335" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2159492" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23982869" sideWeight="0.6381766" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23982869" sideWeight="0.6381766" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32621083" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -422,7 +412,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3955432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -471,7 +460,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="general rewrite" />
+    <option name="LAST_COMMIT_MESSAGE" value="twitter bootstrap mod" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -490,6 +479,7 @@
     <MESSAGE value="bug fix for mongodb spatial geometry 2.0" />
     <MESSAGE value="bug fix for navigation" />
     <MESSAGE value="general rewrite" />
+    <MESSAGE value="twitter bootstrap mod" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
