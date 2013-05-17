@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="712f6fda-9e14-462e-b22c-bf961ff07b90" name="Default" comment="">
+    <list default="true" id="712f6fda-9e14-462e-b22c-bf961ff07b90" name="Default" comment="backbone collection/model">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="backbone-etrusco-sample.iws" />
@@ -38,7 +38,7 @@
     <file path="/App.Views.Training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368106487245" ignored="false" />
     <file path="/App.Views.Send.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368021312324" ignored="false" />
     <file path="/App.Templates.Send.html" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368105918911" ignored="false" />
-    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368803286976" ignored="false" />
+    <file path="/Dummy.txt" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368803386250" ignored="false" />
     <file path="/app.models.activities.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368192159924" ignored="false" />
     <file path="/app.models.training.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181925121" ignored="false" />
     <file path="/app.models.user.js" changelist="712f6fda-9e14-462e-b22c-bf961ff07b90" time="1368181945920" ignored="false" />
@@ -512,7 +512,15 @@
       <created>1368803303241</created>
       <updated>1368803303241</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="backbone collection/model">
+      <created>1368803322379</created>
+      <updated>1368803322379</updated>
+    </task>
+    <task id="LOCAL-00016" summary="backbone collection/model">
+      <created>1368803349507</created>
+      <updated>1368803349507</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
