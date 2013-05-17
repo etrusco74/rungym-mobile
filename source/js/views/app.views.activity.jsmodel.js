@@ -41,13 +41,12 @@ app.views.activity = Backbone.View.extend({
 
     /** render activities model data to select **/
     activity_modelToForm: function() {
-        //var data =  app.models.activities.first().attributes;
-        var data =  app.global.activitiesCollection.models;
+        var data =  app.models.activities.first().attributes;
         for( var i=0 in data ) {
             this.$('#activity')
                 .append($("<option></option>")
-                    .attr("value",data[i].get("_id"))
-                    .text(data[i].get("description")));
+                    .attr("value",data[i]._id)
+                    .text(data[i].description));
         }
     },
 

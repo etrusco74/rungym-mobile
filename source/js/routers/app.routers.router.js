@@ -19,6 +19,7 @@ app.routers.router = Backbone.Router.extend({
     },
     index: function() {
 
+        /** load activities only in index functions **/
         app.utils.loadActivities();
 
         if (!app.global.indexView) {
@@ -56,18 +57,8 @@ app.routers.router = Backbone.Router.extend({
                 app.global.userModel = app.models.user.first();
                 app.global.userModel.destroy();
             });
-            //app.global.userModel = app.models.user.first();
-            //app.global.userModel.destroy();
         }
-        if (app.models.activities.all().length != 0) {
-            app.models.activities.each(function() {
-                //app.models.activities.remove(this);
-                app.global.activitiesModel = app.models.activities.first();
-                app.global.activitiesModel.destroy();
-            });
-            //app.global.activitiesModel = app.models.activities.first();
-            //app.global.activitiesModel.destroy();
-        }
+
         app.utils.destroyViews();
         this.index();
     },
@@ -79,7 +70,6 @@ app.routers.router = Backbone.Router.extend({
             console.log('reusing registration view');
             app.global.registrationView.delegateEvents(); // delegate events when the view is recycled
         }
-        //app.global.registration = new app.views.registration();
         $('#content').html(app.global.registrationView.el);
         this.navigate('#registration', { trigger : false });
     },
@@ -91,7 +81,6 @@ app.routers.router = Backbone.Router.extend({
             console.log('reusing profile view');
             app.global.profileView.delegateEvents(); // delegate events when the view is recycled
         }
-        //app.global.profile = new app.views.profile();
         $('#content').html(app.global.profileView.el);
         this.navigate('#profile', { trigger : false });
     },
@@ -103,11 +92,11 @@ app.routers.router = Backbone.Router.extend({
             console.log('reusing dashboard view');
             app.global.dashboardView.delegateEvents(); // delegate events when the view is recycled
         }
-        //app.global.dashboard = new app.views.dashboard();
         $('#content').html(app.global.dashboardView.el);
         this.navigate('#dashboard', { trigger : false });
     },
     activity: function() {
+
         if (!app.global.activityView) {
             app.global.activityView = new app.views.activity();
             app.global.activityView.render();
@@ -115,30 +104,21 @@ app.routers.router = Backbone.Router.extend({
             console.log('reusing activity view');
             app.global.activityView.delegateEvents(); // delegate events when the view is recycled
         }
-        //app.global.activity = new app.views.activity();
         $('#content').html(app.global.activityView.el);
         this.navigate('#activity', { trigger : false });
     },
     training: function(activity) {
-        /*
-        if (!app.global.trainingView) {
-            app.global.trainingView = new app.views.training({opt : activity});
-            app.global.trainingView.render();
-        } else {
-            console.log('reusing training view');
-            app.global.trainingView.delegateEvents(); // delegate events when the view is recycled
-        }
-        */
+
         app.global.trainingView = new app.views.training({opt : activity});
         app.global.trainingView.render();
         $('#content').html(app.global.trainingView.el);
 
-        var activityObj = app.models.activities.first().attributes;
-        Object.keys(activityObj).forEach(function(key) {
-            if (activityObj[key]._id ==  activity) {
-                $('#activity_description').text(activityObj[key].description);
+        var data =  app.global.activitiesCollection.models;
+        for( var i=0 in data ) {
+            if ( data[i].get("_id") ==  activity) {
+                $('#activity_description').text( data[i].get("description") );
             }
-        });
+        }
 
         this.navigate('#training/'+activity, { trigger : false });
     },
@@ -150,7 +130,6 @@ app.routers.router = Backbone.Router.extend({
             console.log('reusing send view');
             app.global.sendView.delegateEvents(); // delegate events when the view is recycled
         }
-        //app.global.send = new app.views.send();
         $('#content').html(app.global.sendView.el);
         this.navigate('#send', { trigger : false });
     }

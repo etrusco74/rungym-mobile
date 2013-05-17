@@ -1,7 +1,7 @@
 /** app namespace **/
 app = {
-    models: {},
     collections: {},
+    models: {},
     routers: {},
     views: {},
 
@@ -16,15 +16,15 @@ app = {
         },
 
         loadActivities: function(){
-            app.models.activities.load(function() {
-                if (app.models.activities.all().length == 0) {
-                    $.getJSON(app.const.apiurl() + "activities",
-                        function (data) {
-                            app.global.activitiesModel = new app.models.activities(data);
-                            app.global.activitiesModel.save();
-                        });
+            app.global.activitiesCollection = new app.collections.activities();
+            app.global.activitiesCollection.fetch();
+            /*
+            app.global.activitiesCollection.fetch({
+                success: function (act) {
+                    app.global.activitiesCollection = act;
                 }
-            });
+            })
+            */
         },
 
         destroyViews: function(){
