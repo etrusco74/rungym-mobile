@@ -18,13 +18,6 @@ app = {
         loadActivities: function(){
             app.global.activitiesCollection = new app.collections.activities();
             app.global.activitiesCollection.fetch();
-            /*
-            app.global.activitiesCollection.fetch({
-                success: function (act) {
-                    app.global.activitiesCollection = act;
-                }
-            })
-            */
         },
 
         destroyViews: function(){
@@ -52,7 +45,7 @@ app = {
 
     /** app config **/
     const: {
-        debug : false,
+        debug : true,
         //env : 'development',
         env : 'production',
 
@@ -71,33 +64,12 @@ app = {
         version : '0.0.3'
     },
 
-    /** app global variables **/
+    /** app global namespace **/
     global: {
-
         timer : null,
+        speed_timer : 1000,
         training_active : false,
         different_latlon : true,
-        index : 0,
-        i_emulation : 0,
-        speed_timer : 1000,
-
-        secondi_totali : 0,
-        minuti_totali : 0,
-        tempo_str : '00:00:00',
-
-        total_distance_str : '0',
-        total_distance_km : 0,
-        total_distance_m : 0,
-        distance_two_point_km : 0,
-
-        velocita_istantanea_ms : 0,
-        somma_velocita_istantanea_ms : 0,
-        velocita_media_ms : 0,
-
-        velocita_istantanea_kmh : 0,
-        velocita_media_kmh : 0,
-
-        calorie : 0,
-        gr_persi : 0
+        i_emulation : 0
     }
 };

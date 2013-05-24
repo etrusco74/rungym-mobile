@@ -82,12 +82,12 @@ app.views.profile = Backbone.View.extend({
         if (confirm('confermi di voler aggiornare il tuo profilo?'))    {
             var xhr = $.ajax({
                 type: "PUT",
-                url: app.const.apiurl() + "user/id/" + app.global.userModel.attributes._id,
+                url: app.const.apiurl() + "user/id/" + app.models.user.first().attributes._id,
                 data: this.profile_formToModel(),
                 crossDomain: true,
                 headers: {
                     "X-Requested-With": "XMLHttpRequest",
-                    "authkey" : app.global.userModel.attributes.auth.authkey
+                    "authkey" : app.models.user.first().attributes.auth.authkey
                 },
                 dataType: "json",
                 contentType: 'application/json'
@@ -95,7 +95,7 @@ app.views.profile = Backbone.View.extend({
 
             xhr.done(function(data, textStatus, jqXHR) {
                 if (data.success) {
-                    app.global.userModel.attributes = data.user;
+                    app.models.user.first().attributes = data.user;
                     alert('profilo aggiornato con successo');
                     app.routers.router.prototype.profile();
                 }
@@ -117,7 +117,7 @@ app.views.profile = Backbone.View.extend({
         jsonObj.last_name = this.$("#last_name").val();
         jsonObj.username = this.$('#username').val();
         jsonObj.email = this.$('#email').val();
-        if (app.global.userModel.attributes.story_weight[app.global.userModel.attributes.story_weight.length - 1].weight != this.$('#story_weight').val())
+        if (app.models.user.first().attributes.story_weight[app.models.user.first().attributes.story_weight.length - 1].weight != this.$('#story_weight').val())
             jsonObj.story_weight = this.$('#story_weight').val();
         jsonObj.born_date = this.$('#born_date').val();
         jsonObj.gender = this.$("#gender").val();
@@ -127,18 +127,18 @@ app.views.profile = Backbone.View.extend({
 
     /** render user model data to profile form **/
     profile_modelToForm: function() {
-        this.$('#_id').val(app.global.userModel.attributes._id);
-        this.$('#first_name').val(app.global.userModel.attributes.first_name);
-        this.$('#last_name').val(app.global.userModel.attributes.last_name);
-        this.$('#username').val(app.global.userModel.attributes.username);
-        this.$('#registration_date').val(app.global.userModel.attributes.registration_date);
-        this.$('#login_date').val(app.global.userModel.attributes.auth.login_date);
-        this.$('#email').val(app.global.userModel.attributes.email);
-        this.$('#registration_weight').val(app.global.userModel.attributes.registration_weight);
-        this.$('#story_weight').val(app.global.userModel.attributes.story_weight[app.global.userModel.attributes.story_weight.length - 1].weight);
-        this.$('#story_date').val(app.global.userModel.attributes.story_weight[app.global.userModel.attributes.story_weight.length - 1].date);
-        this.$('#born_date').val(app.global.userModel.attributes.born_date);
-        this.$("#gender").val(app.global.userModel.attributes.gender).attr('selected',true);
+        this.$('#_id').val(app.models.user.first().attributes._id);
+        this.$('#first_name').val(app.models.user.first().attributes.first_name);
+        this.$('#last_name').val(app.models.user.first().attributes.last_name);
+        this.$('#username').val(app.models.user.first().attributes.username);
+        this.$('#registration_date').val(app.models.user.first().attributes.registration_date);
+        this.$('#login_date').val(app.models.user.first().attributes.auth.login_date);
+        this.$('#email').val(app.models.user.first().attributes.email);
+        this.$('#registration_weight').val(app.models.user.first().attributes.registration_weight);
+        this.$('#story_weight').val(app.models.user.first().attributes.story_weight[app.models.user.first().attributes.story_weight.length - 1].weight);
+        this.$('#story_date').val(app.models.user.first().attributes.story_weight[app.models.user.first().attributes.story_weight.length - 1].date);
+        this.$('#born_date').val(app.models.user.first().attributes.born_date);
+        this.$("#gender").val(app.models.user.first().attributes.gender).attr('selected',true);
     },
 
     destroy_view: function() {

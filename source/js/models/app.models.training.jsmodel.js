@@ -5,8 +5,8 @@
  * Time: 14.07
  * To change this template use File | Settings | File Templates.
  */
-app.models.user = Backbone.Model.extend({
-    initialize: function(){
-        console.log("initializing user model");
-    }
+app.models.training = Model("training", function() {
+    this.persistence(Model.localStorage)
 });
+
+app.models.training.load(function() {});

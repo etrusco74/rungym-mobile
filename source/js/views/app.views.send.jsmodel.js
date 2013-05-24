@@ -27,15 +27,20 @@ app.views.send = Backbone.View.extend({
 
     /** reload activity and user data if he has not performed logout **/
     load: function() {
-        //app.global.userModel = app.models.user.first();
-        //app.global.trainingModel = app.models.training.last();
+        app.global.userModel = app.models.user.first();
+        app.global.trainingModel = app.models.training.last();
     },
 
     /** render template **/
     render: function() {
         $(this.el).html(this.template());
-        this.$("#btnSend").html('trasferisci ('+app.global.trainingsCollection.size()+')');
-        this.$("#btnDelete").html('elimina ('+app.global.trainingsCollection.size()+')');
+        if ( app.models.training.all().length > 0) {
+            this.$("#btnSend").html('trasferisci ('+app.models.training.all().length+')');
+            this.$("#btnDelete").html('elimina ('+app.models.training.all().length+')');
+        }
+        else {
+            app.routers.router.prototype.dashboard();
+        }
         return this;
     },
 
@@ -43,7 +48,7 @@ app.views.send = Backbone.View.extend({
         var xhr = $.ajax({
             type: "POST",
             url: app.const.apiurl() + "training",
-            data: JSON.stringify(app.global.trainingsCollection.first().attributes),
+            data: JSON.stringify(app.global.trainingModel.attributes),
             crossDomain: true,
             headers: {
                 "X-Requested-With": "XMLHttpRequest",
@@ -55,7 +60,7 @@ app.views.send = Backbone.View.extend({
 
         xhr.done(function(data, textStatus, jqXHR) {
             if (data.success) {
-                app.global.trainingsCollection.remove( app.global.trainingsCollection.first() );
+                app.global.trainingModel.destroy();
                 alert('Allenamento trasferito');
                 app.routers.router.prototype.dashboard();
             }
@@ -70,7 +75,7 @@ app.views.send = Backbone.View.extend({
     },
 
     send_delete: function() {
-        app.global.trainingsCollection.remove( app.global.trainingsCollection.first() );
+        app.global.trainingModel.destroy();
         app.routers.router.prototype.send();
     },
 

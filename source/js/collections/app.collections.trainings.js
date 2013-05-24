@@ -5,8 +5,10 @@
  * Time: 14.07
  * To change this template use File | Settings | File Templates.
  */
-app.models.user = Backbone.Model.extend({
+app.collections.trainings = Backbone.Collection.extend({
     initialize: function(){
-        console.log("initializing user model");
-    }
+        console.log("initializing trainings collection");
+    },
+
+    model: app.models.training
 });

@@ -24,7 +24,31 @@ app.views.training = Backbone.View.extend({
     load: function() {
 
         var activity_id = this.options.opt;
-        app.global.userModel = app.models.user.first();
+
+        /** reset global var **/
+        app.global.training_active = false;
+        app.global.different_latlon = true;
+        app.global.i_emulation = 0;
+
+        app.global.index = 0;
+        app.global.secondi_totali = 0;
+        app.global.minuti_totali = 0;
+        app.global.tempo_str = '00:00:00';
+
+        app.global.total_distance_str = '0';
+        app.global.total_distance_km = 0;
+        app.global.total_distance_m = 0;
+        app.global.distance_two_point_km = 0;
+
+        app.global.velocita_istantanea_ms = 0;
+        app.global.somma_velocita_istantanea_ms = 0;
+        app.global.velocita_media_ms = 0;
+
+        app.global.velocita_istantanea_kmh = 0;
+        app.global.velocita_media_kmh = 0;
+
+        app.global.calorie = 0;
+        app.global.gr_persi = 0;
 
         app.global.trainingModel = new app.models.training({
             "username" :  app.global.userModel.attributes.username,
@@ -46,19 +70,20 @@ app.views.training = Backbone.View.extend({
 
     /** start training **/
     training_start: function() {
+        var that = this;
         if (app.global.training_active) {
-            app.global.training_active  = false;
+            app.global.training_active = false;
             $("#btnStart").html('riprendi');
 
-            app.global.trainingModel.attributes.end_date = new Date();
+            app.global.trainingModel.set("end_date", new Date());
             clearInterval(app.global.timer);
         }
         else    {
             app.global.training_active = true;
             $("#btnStart").html('ferma');
 
-            if (typeof app.global.trainingModel.attributes.start_date === 'undefined') {
-                app.global.trainingModel.attributes.start_date = new Date();
+            if (app.global.trainingModel.attributes.start_date == "") {
+                app.global.trainingModel.set("start_date", new Date());
             }
 
             if (app.const.debug) {
@@ -67,7 +92,8 @@ app.views.training = Backbone.View.extend({
             else
             {
                 app.global.timer = setInterval(function() {
-                    navigator.geolocation.getCurrentPosition(app.views.training.prototype.refreshUI, app.views.training.prototype.noLocation);
+                    //navigator.geolocation.getCurrentPosition(app.views.training.prototype.refreshUI, app.views.training.prototype.noLocation);
+                    navigator.geolocation.getCurrentPosition(that.refreshUI, that.noLocation);
                 }, app.global.speed_timer);
             }
         }
@@ -76,18 +102,19 @@ app.views.training = Backbone.View.extend({
     /** end training **/
     training_end: function() {
         if (app.global.training_active) {
-            app.global.training_active  = false;
+            app.global.training_active = false;
 
-            app.global.trainingModel.attributes.end_date = new Date();
+            app.global.trainingModel.set("end_date", new Date());
             clearInterval(app.global.timer);
         }
 
         if (app.global.trainingModel.attributes.events.length > 1) {
-            app.global.trainingModel.save();
+            //app.global.trainingsCollection = new app.collections.trainings([app.global.trainingModel]);
+            app.global.trainingsCollection.add([app.global.trainingModel]);
             app.routers.router.prototype.send();
         }
         else {
-            app.global.trainingModel.destroy();
+            app.global.trainingModel = null;
             app.routers.router.prototype.dashboard();
         }
     },
@@ -166,16 +193,18 @@ app.views.training = Backbone.View.extend({
         
             }
 
+            app.global.index++;
+
             /** training values to model **/
-            app.global.trainingModel.attributes.total_event = app.global.index;
-            app.global.trainingModel.attributes.total_meters = app.global.total_distance_m;
-            app.global.trainingModel.attributes.speed_average_ms = app.global.velocita_media_ms;
-            app.global.trainingModel.attributes.speed_average_kmh = app.global.velocita_media_kmh;
-            app.global.trainingModel.attributes.duration_sec = app.global.secondi_totali;
-            app.global.trainingModel.attributes.duration_min = app.global.minuti_totali;
-            app.global.trainingModel.attributes.duration_str = app.global.tempo_str;
-            app.global.trainingModel.attributes.burned_calories = app.global.calorie;
-            app.global.trainingModel.attributes.lose_gr = app.global.gr_persi;
+            app.global.trainingModel.set("total_event",  app.global.index);
+            app.global.trainingModel.set("total_meters", app.global.total_distance_m);
+            app.global.trainingModel.set("speed_average_ms", app.global.velocita_media_ms);
+            app.global.trainingModel.set("speed_average_kmh", app.global.velocita_media_kmh);
+            app.global.trainingModel.set("duration_sec", app.global.secondi_totali);
+            app.global.trainingModel.set("duration_min", app.global.minuti_totali);
+            app.global.trainingModel.set("duration_str", app.global.tempo_str);
+            app.global.trainingModel.set("burned_calories", app.global.calorie);
+            app.global.trainingModel.set("lose_gr", app.global.gr_persi);
 
             /** refresh training values **/
             $("#durata").text(app.global.tempo_str);
@@ -186,8 +215,6 @@ app.views.training = Backbone.View.extend({
             $("#velmediakmh").text(app.global.velocita_media_kmh);
             $("#cal").text(app.global.calorie);
             $("#gr").text(app.global.gr_persi);
-
-            app.global.index++;
         }
     },
 
