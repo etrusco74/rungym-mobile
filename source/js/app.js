@@ -45,7 +45,7 @@ app = {
 
     /** app config **/
     const: {
-        debug : true,
+        debug : false,
         //env : 'development',
         env : 'production',
 
