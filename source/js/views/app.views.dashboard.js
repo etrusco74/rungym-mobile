@@ -36,9 +36,8 @@ app.views.dashboard = Backbone.View.extend({
 
     /** render template **/
     render: function() {
-        $(this.el).html(this.template({name :  app.global.userModel.attributes.first_name}));
-        //if (typeof app.global.trainingsCollection === 'undefined')     {
-        if(app.global.trainingsCollection.size() == 0) {
+        $(this.el).html(this.template({name :  app.global.usersCollection.at(0).get("first_name")}));
+        if(app.global.trainingsCollection.length == 0) {
             this.$("#trasf").remove();
         }
         return this;

@@ -115,7 +115,10 @@ app.views.registration = Backbone.View.extend({
 
         xhr.done(function(data, textStatus, jqXHR) {
             if (data.success) {
-                app.global.userModel = new app.models.user(data.user);
+                var _model = new app.models.user(data.user);
+                app.global.usersCollection.add(_model);
+                _model.save();
+
                 alert('registrazione effettuata correttamente');
                 app.routers.router.prototype.dashboard();
             }

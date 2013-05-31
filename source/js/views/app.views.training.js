@@ -51,7 +51,7 @@ app.views.training = Backbone.View.extend({
         app.global.gr_persi = 0;
 
         app.global.trainingModel = new app.models.training({
-            "username" :  app.global.userModel.attributes.username,
+            "username" :  app.global.usersCollection.first().get("username"),
             "activity_id" : activity_id,
             "events": [],
             "loc": {
@@ -82,7 +82,7 @@ app.views.training = Backbone.View.extend({
             app.global.training_active = true;
             $("#btnStart").html('ferma');
 
-            if (app.global.trainingModel.attributes.start_date == "") {
+            if (app.global.trainingModel.get("start_date") == "") {
                 app.global.trainingModel.set("start_date", new Date());
             }
 
@@ -108,9 +108,11 @@ app.views.training = Backbone.View.extend({
             clearInterval(app.global.timer);
         }
 
-        if (app.global.trainingModel.attributes.events.length > 1) {
+        if (app.global.trainingModel.get("events").length > 1) {
             //app.global.trainingsCollection = new app.collections.trainings([app.global.trainingModel]);
             app.global.trainingsCollection.add([app.global.trainingModel]);
+            app.global.trainingModel.save();
+
             app.routers.router.prototype.send();
         }
         else {
@@ -133,8 +135,8 @@ app.views.training = Backbone.View.extend({
                 var pos = [];
                 pos.push(event.coords.longitude);
                 pos.push(event.coords.latitude);
-                app.global.trainingModel.attributes.loc.coordinates.push(pos);
-                app.global.trainingModel.attributes.events.push(event);
+                app.global.trainingModel.get("loc").coordinates.push(pos);
+                app.global.trainingModel.get("events").push(event);
                 
             }    
             else {
@@ -143,8 +145,8 @@ app.views.training = Backbone.View.extend({
                 app.global.different_latlon = app.views.training.prototype.is_different_lat_lon(
                         event.coords.latitude,
                         event.coords.longitude,
-                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.latitude,
-                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.longitude);
+                        app.global.trainingModel.get("events")[app.global.trainingModel.get("events").length - 1].coords.latitude,
+                        app.global.trainingModel.get("events")[app.global.trainingModel.get("events").length - 1].coords.longitude);
                 
                 /** add event only if current and previous lat/lon are different - fix mongodb spatial error **/
                 if (app.global.different_latlon) {
@@ -153,13 +155,13 @@ app.views.training = Backbone.View.extend({
                     var pos = [];
                     pos.push(event.coords.longitude);
                     pos.push(event.coords.latitude);
-                    app.global.trainingModel.attributes.loc.coordinates.push(pos);
-                    app.global.trainingModel.attributes.events.push(event);
+                    app.global.trainingModel.get("loc").coordinates.push(pos);
+                    app.global.trainingModel.get("events").push(event);
                     
-                    app.global.distance_two_point_km = app.views.training.prototype.getDistanceFromLatLonInKm(  app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.latitude,
-                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 2].coords.longitude,
-                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.latitude,
-                        app.global.trainingModel.attributes.events[app.global.trainingModel.attributes.events.length - 1].coords.longitude
+                    app.global.distance_two_point_km = app.views.training.prototype.getDistanceFromLatLonInKm(  app.global.trainingModel.get("events")[app.global.trainingModel.get("events").length - 2].coords.latitude,
+                        app.global.trainingModel.get("events")[app.global.trainingModel.get("events").length - 2].coords.longitude,
+                        app.global.trainingModel.get("events")[app.global.trainingModel.get("events").length - 1].coords.latitude,
+                        app.global.trainingModel.get("events")[app.global.trainingModel.get("events").length - 1].coords.longitude
                     );      // in km
     
                     app.global.total_distance_km = app.global.total_distance_km + app.global.distance_two_point_km;
@@ -188,7 +190,7 @@ app.views.training = Backbone.View.extend({
                 app.global.velocita_media_kmh = Math.round(app.global.velocita_media_ms * 3.6);
 
                 //CALORIE = PESO * KM
-                app.global.calorie =  Math.round ( app.global.userModel.attributes.story_weight[ app.global.userModel.attributes.story_weight.length - 1].weight * app.global.total_distance_km);
+                app.global.calorie =  Math.round ( app.global.usersCollection.first().get("story_weight")[ app.global.usersCollection.first().get("story_weight").length - 1].weight * app.global.total_distance_km);
                 app.global.gr_persi = Math.round(( app.global.calorie / 2 ) / 9);
         
             }

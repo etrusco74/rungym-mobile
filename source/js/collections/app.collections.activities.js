@@ -9,8 +9,6 @@ app.collections.activities = Backbone.Collection.extend({
     initialize: function(){
         console.log("initializing activities collection");
     },
-
     model: app.models.activity,
-
     url: app.const.apiurl() + "activities"
 });

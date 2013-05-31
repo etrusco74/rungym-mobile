@@ -18,9 +18,12 @@ app.routers.router = Backbone.Router.extend({
         'send':             'send'
     },
     index: function() {
-        /** load activities only in index functions **/
+        /** load activities from RESTful webservice **/
         app.utils.loadActivities();
-        app.global.trainingsCollection = new app.collections.trainings();
+
+        /** load data from localstorage service **/
+        app.utils.loadUsers();
+        app.utils.loadTrainings();
 
         if (!app.global.indexView) {
             app.global.indexView = new app.views.index();
@@ -34,20 +37,28 @@ app.routers.router = Backbone.Router.extend({
         this.navigate('#', { trigger : false });
     },
     login: function() {
-        if (!app.global.loginView) {
-            app.global.loginView = new app.views.login();
-            app.global.loginView.render();
-        } else {
-            console.log('reusing login view');
-            app.global.loginView.delegateEvents(); // delegate events when the view is recycled
+        /** reload user data if he has not performed logout **/
+        if (app.global.usersCollection.length > 0) {
+            app.routers.router.prototype.dashboard();
         }
-        $('#content').html(app.global.loginView.el);
-        this.navigate('#login', { trigger : false });
+        else {
+            if (!app.global.loginView) {
+                app.global.loginView = new app.views.login();
+                app.global.loginView.render();
+            } else {
+                console.log('reusing login view');
+                app.global.loginView.delegateEvents(); // delegate events when the view is recycled
+            }
+            $('#content').html(app.global.loginView.el);
+            this.navigate('#login', { trigger : false });
+        }
     },
     logout: function() {
-        app.global.trainingsCollection = null;
-        app.global.activitiesCollection = null;
-        app.global.userModel = null;
+
+        //app.global.trainingsCollection.each(function(model) { model.destroy(); } );
+        app.global.activitiesCollection.each(function(model) { model.destroy(); } );
+        app.global.usersCollection.each(function(model) { model.destroy(); } );
+
         app.utils.destroyViews();
         this.index();
     },

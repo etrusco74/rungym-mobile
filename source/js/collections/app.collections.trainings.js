@@ -9,6 +9,6 @@ app.collections.trainings = Backbone.Collection.extend({
     initialize: function(){
         console.log("initializing trainings collection");
     },
-
-    model: app.models.training
+    model: app.models.training,
+    localStorage: new Backbone.LocalStorage("trainings")
 });

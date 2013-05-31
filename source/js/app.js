@@ -20,6 +20,16 @@ app = {
             app.global.activitiesCollection.fetch();
         },
 
+        loadTrainings: function(){
+            app.global.trainingsCollection = new app.collections.trainings();
+            app.global.trainingsCollection.fetch();
+        },
+
+        loadUsers: function(){
+            app.global.usersCollection = new app.collections.users();
+            app.global.usersCollection.fetch();
+        },
+
         destroyViews: function(){
             if (app.global.dashboardView) { app.global.dashboardView.destroy_view(); }
             if (app.global.activityView) { app.global.activityView.destroy_view();  }
@@ -61,7 +71,7 @@ app = {
 
         testJsonUrl : 'js/events.json',
 
-        version : '0.0.3'
+        version : '0.0.4'
     },
 
     /** app global namespace **/

@@ -34,8 +34,8 @@ app.views.send = Backbone.View.extend({
     /** render template **/
     render: function() {
         $(this.el).html(this.template());
-        this.$("#btnSend").html('trasferisci ('+app.global.trainingsCollection.size()+')');
-        this.$("#btnDelete").html('elimina ('+app.global.trainingsCollection.size()+')');
+        this.$("#btnSend").html('trasferisci ('+app.global.trainingsCollection.length+')');
+        this.$("#btnDelete").html('elimina ('+app.global.trainingsCollection.length+')');
         return this;
     },
 
@@ -47,7 +47,7 @@ app.views.send = Backbone.View.extend({
             crossDomain: true,
             headers: {
                 "X-Requested-With": "XMLHttpRequest",
-                "authkey" : app.global.userModel.attributes.auth.authkey
+                "authkey" : app.global.usersCollection.at(0).get("auth").authkey
             },
             dataType: "json",
             contentType: 'application/json'
@@ -55,7 +55,10 @@ app.views.send = Backbone.View.extend({
 
         xhr.done(function(data, textStatus, jqXHR) {
             if (data.success) {
-                app.global.trainingsCollection.remove( app.global.trainingsCollection.first() );
+                //app.global.trainingsCollection.remove( app.global.trainingsCollection.first() );
+                var _model = app.global.trainingsCollection.first();
+                _model.destroy();
+
                 alert('Allenamento trasferito');
                 app.routers.router.prototype.dashboard();
             }
@@ -70,7 +73,10 @@ app.views.send = Backbone.View.extend({
     },
 
     send_delete: function() {
-        app.global.trainingsCollection.remove( app.global.trainingsCollection.first() );
+        //app.global.trainingsCollection.remove( app.global.trainingsCollection.first() );
+        var _model = app.global.trainingsCollection.first();
+        _model.destroy();
+
         app.routers.router.prototype.send();
     },
 
